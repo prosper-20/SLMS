@@ -40,10 +40,13 @@ INSTALLED_APPS = [
     'courses.apps.CoursesConfig',
     'students.apps.StudentsConfig',
     'api.apps.ApiConfig',
-    'rest_framework'
+    'rest_framework',
+    'embed_video',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -132,3 +135,29 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 LOGIN_REDIRECT_URL = reverse_lazy('student_course_list')
+
+
+# CACHES = {
+#     'default': {
+#     'BACKEND': 'django.core.cache.backends.memcached.PyMemcacheCache',
+#     'LOCATION': '127.0.0.1:11211',
+#     }
+# }
+
+
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        # format: redis://redis-container-name:port/db-number
+        "LOCATION": "redis://localhost:6379/",
+        # "OPTIONS": {
+        #     "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        # },
+    }
+}
+
+
+
+INTERNAL_IPS = [
+'127.0.0.1',
+]
