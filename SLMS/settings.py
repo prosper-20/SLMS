@@ -45,7 +45,10 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'redisboard',
     'chat',
+    'channels',
 ]
+
+ASGI_APPLICATION = 'SLMS.routing.application'
 
 MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
