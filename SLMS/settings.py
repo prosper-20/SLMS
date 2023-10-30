@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'channels',
 ]
 
-ASGI_APPLICATION = 'SLMS.routing.application'
+ASGI_APPLICATION = 'SLMS.asgi.application'
 
 MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
@@ -158,6 +158,16 @@ CACHES = {
             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
         }
     }
+}
+
+
+CHANNEL_LAYERS = {
+    'default': {
+    'BACKEND': 'channels_redis.core.RedisChannelLayer',
+    'CONFIG': {
+    'hosts': [('127.0.0.1', 6379)],
+    },
+    },
 }
 
 # CACHES = {
