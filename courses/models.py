@@ -30,6 +30,9 @@ class Course(models.Model):
     
     def __str__(self):
         return self.title
+    
+    def get_full_name(self):
+        return self.owner.username
 
 
 class Module(models.Model):
