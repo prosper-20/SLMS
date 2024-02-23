@@ -171,7 +171,7 @@ CACHES = {
     'default': {
         'BACKEND': 'django_redis.cache.RedisCache',
         # 'LOCATION': 'redis://127.0.0.1:6379/1',
-        'LOCATION': 'redis://default:FGJiFDoKaohgOdoMk2Fo2mNEA3AcFENB@roundhouse.proxy.rlwy.net:48846',
+        # 'LOCATION': 'redis://default:FGJiFDoKaohgOdoMk2Fo2mNEA3AcFENB@roundhouse.proxy.rlwy.net:48846',
         'OPTIONS': {
             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
         }
@@ -183,8 +183,8 @@ CHANNEL_LAYERS = {
     'default': {
     'BACKEND': 'channels_redis.core.RedisChannelLayer',
     'CONFIG': {
-    # 'hosts': [('127.0.0.1', 6379)],
-    'hosts': 'redis://default:FGJiFDoKaohgOdoMk2Fo2mNEA3AcFENB@roundhouse.proxy.rlwy.net:48846',
+    'hosts': [('127.0.0.1', 6379)],
+    # 'hosts': 'redis://default:FGJiFDoKaohgOdoMk2Fo2mNEA3AcFENB@roundhouse.proxy.rlwy.net:48846',
     },
     },
 }
