@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'courses.apps.CoursesConfig',
     'students.apps.StudentsConfig',
+    'users.apps.UsersConfig',
     'api.apps.ApiConfig',
     'rest_framework',
     'embed_video',
