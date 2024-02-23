@@ -12,7 +12,7 @@ class RegisterView(APIView):
         user.save()
         return Response({
         "email": user.data['email'],
-        "username":user.data['username'],
+        
         
 }, status=status.HTTP_201_CREATED)
 
