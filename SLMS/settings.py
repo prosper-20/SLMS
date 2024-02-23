@@ -52,6 +52,8 @@ INSTALLED_APPS = [
 
 ASGI_APPLICATION = 'SLMS.asgi.application'
 
+AUTH_USER_MODEL = "users.CustomUser"
+
 MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',

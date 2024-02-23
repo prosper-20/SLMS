@@ -1,9 +1,12 @@
 from django.db import models
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey
 from .fields import OrderField
 from django.template.loader import render_to_string
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 class Subject(models.Model):
     title = models.CharField(max_length=200)
