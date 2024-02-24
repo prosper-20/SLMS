@@ -181,7 +181,7 @@ LOGIN_REDIRECT_URL = reverse_lazy('student_course_list')
 CACHES = {
     'default': {
         'BACKEND': 'django_redis.cache.RedisCache',
-        # 'LOCATION': 'redis://127.0.0.1:6379/1',
+        'LOCATION': 'redis://127.0.0.1:6379/1',
         # 'LOCATION': 'redis://default:FGJiFDoKaohgOdoMk2Fo2mNEA3AcFENB@roundhouse.proxy.rlwy.net:48846',
         'OPTIONS': {
             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
@@ -220,7 +220,7 @@ INTERNAL_IPS = [
 '127.0.0.1',
 ]
 
-CELERY_RESULT_BACKEND  = 'djcelery.backends.database:DatabaseBackend'
+
 
 
 CACHE_MIDDLEWARE_ALIAS = 'default'
