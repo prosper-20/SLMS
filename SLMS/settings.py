@@ -220,6 +220,8 @@ INTERNAL_IPS = [
 '127.0.0.1',
 ]
 
+CELERY_RESULT_BACKEND  = 'djcelery.backends.database:DatabaseBackend'
+
 
 CACHE_MIDDLEWARE_ALIAS = 'default'
 CACHE_MIDDLEWARE_SECONDS = 60 * 15 # 15 minutes
